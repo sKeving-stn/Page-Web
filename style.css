@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --base-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #ffc06e;
+    --secondary-color: #8D8DFF;
+    --color-1: #F9F6F3;
+    --color-2: #F3F7F9;
+    --color-3: #F6F3F9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+}
+
+body{
+    padding: 1em;
+    background-color: var(--base-color);
+}
+
+h1, h2, h3{
+    font-family: Merriweather, Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header, section{
+    margin: 2em auto;
+    width: min(75em, 100%);
+    background-color: var(--color-1);
+    padding: min(2em, 15%);
+    border-radius: 1em;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+    margin-bottom: 2em;
+}
+
+header img{
+    width: 260px;
+    height: 320px;
+    border-radius: 1em;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+}
+
+.top-image{
+    width: 260px;
+    height: 320px;
+    border-radius: 1em;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    margin: 0 auto 1.5em auto;
+}
+
+.text-container{
+    flex: 0 1 34em;
+}
+
+/* SOLO el bloque del header se estira más */
+header .text-container{
+    flex: 1 1 100%;
+    width: 100%;
+}
+
+/* SOLO el título principal */
+header h1{
+    font-size: 2.5rem;
+    margin-bottom: 0.4em;
+    width: 100%;
+}
+
+/* SOLO el párrafo debajo del h1 */
+header .text-container p{
+    margin: 0 0 1em 0;
+    font-size: 1.25rem;
+    text-align: justify;
+    line-height: 1.6;
+    width: 100%;
+}
+
+/* Botón */
+.cta-button{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 0.75em 1.25em;
+    border-radius: 0.5em;
+    font-weight: 600;
+    margin-top: 1em;
+}
+
+/* Sección de abajo */
+section{
+    padding: 3em min(2em, 15%);
+    background-color: var(--color-2);
+    text-align: center;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+section p{
+    margin-top: 1em;
+    font-size: 1.25rem;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.personal-info-landscape{
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 1em;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+section.hobbies{
+  padding: 3em min(2em, 15%);
+  background-color: var(--color-3);
+  text-align: center;
+}
+
+section.hobbies ul,
+section.hobbies li{
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-top: 1em;
+}
+
+section.hobbies ul{
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+section #my-picture{
+    background-color: var(--color-3);
+}
+
+.grid-container{
+    margin-top: 3em;
+    margin-bottom: 3em;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "img-1 img-1 img-2 img-3"
+    "img-1 img-1 img-4 img-5";
+    gap: 1em;
+}
+
+.grid-container img{
+    height: 100%;
+    width: 100%;
+    border-radius: .5em;
+    transition: 100ms ease;
+}
+
+.grid-container img:hover{
+    scale: 1.05;
+}
+
+.page-schedule h1{
+  font-size: 42px;
+  letter-spacing: .5px;
+  text-align: center;
+}
+
+/* Solo Personal-Schedule */
+.page-schedule .top-image{
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  margin: 16px auto 0;
+  object-fit: contain;
+}
+
+.page-schedule .weekend-section .flex-container{
+  flex-direction: row-reverse;
+}
+
+.CV h1{
+  font-size: 42px;
+  letter-spacing: .5px;
+  text-align: center;
+}
+
+/* Card del visor */
+.cv-viewer{
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.08);
+}
+
+/* El PDF ocupa el espacio */
+.cv-viewer embed{
+  width: 100%;
+  height: clamp(520px, 75vh, 900px);
+  display: block;
+}
+
+/* Fallback solo se verá si el embed no carga */
+.cv-fallback{
+  padding: 14px 16px;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* === Botones CV (Open / Download) === */
+.cv-actions{
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 14px 0 22px;
+  flex-wrap: wrap;
+}
+
+.cv-actions .btn{
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: .2px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,.10);
+}
+
+.cv-actions .btn:not(.outline){
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+.cv-actions .btn.outline{
+  background: var(--primary-color);
+  color: var(--text-color);
+  backdrop-filter: blur(6px);
+}
+
+.cv-actions .btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.14);
+}
+
+.cv-actions .btn:active{
+  transform: translateY(0px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.10);
+}
+
+.cv-actions .btn:focus{
+  outline: none;
+}
+
+.cv-actions .btn:focus-visible{
+  outline: 3px solid rgba(141,141,255,.45);
+  outline-offset: 3px;
+}
+
+/* ===== NAVBAR bonito con botones ===== */
+nav{
+  width: min(1100px, 100%);
+  margin: 0.2em auto 2em auto;
+
+  background: var(--color-1);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 1em;
+  padding: 0.75em 1em;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+nav ul{
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav li:first-child{
+  margin-right: auto;
+  font-family: Merriweather, Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+}
+
+nav a.nav-link{
+  text-decoration: none;
+  color: var(--text-color);
+
+  padding: 0.55em 0.9em;
+  border-radius: 0.9em;
+  border: 1px solid rgba(0,0,0,.12);
+
+  background: rgba(255,255,255,.6);
+  backdrop-filter: blur(6px);
+
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+
+nav a.nav-link:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.10);
+  background: rgba(255,255,255,.85);
+}
+
+nav a.nav-link:focus-visible{
+  outline: 3px solid rgba(141,141,255,.45);
+  outline-offset: 3px;
+}
+
+/* ===== NAV responsive: mejor acomodo en pantallas chicas ===== */
+@media (max-width: 700px){
+  nav{
+    padding: 0.75em;
+  }
+
+  nav ul{
+    gap: 0.6em;
+  }
+
+  nav li:first-child{
+    flex: 1 1 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  /* Botones ocupan “cuadritos” parejos y centrados */
+  nav li{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav a.nav-link{
+    width: 100%;
+    text-align: center;
+    white-space: nowrap; /* evita que “Personal Schedule” se parta */
+  }
+}
